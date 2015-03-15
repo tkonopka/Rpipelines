@@ -1,12 +1,11 @@
-
-##
-## Simple function that takes a vector of color values
-## makes a bar plot showing all the colors, with their labels
-## so that they can be viewed and compared
-##
-## Author: Tomasz Konopka
-##
-
+##' Display a set of colors on screen
+##'
+##' Displays bars of various colors on screen. Each bar will be
+##' annotated with the color name. Useful during development
+##' for understanding how various colors will appear together.
+##'
+##' @param colors vector of colors to display on screen
+##' @export
 showColors = function(colors) {
   oldmar = par()$mar;
   par(mar=c(2,8,2,2));

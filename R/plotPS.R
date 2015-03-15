@@ -1,13 +1,20 @@
 ##
-## Generic add-ons to start/end writing image info to a file
+## This file contains a number of functions related to writing an image
+##  to a file
 ##
-## Author: Tomasz Konopka (CeMM)
 
 
 
-## use this to start writing into a PS file
-## (can take multiple paramters, but only uses "file" and "fsize");
-##
+##' Start plotting into a PS device
+##'
+##' Start plotting into a PS device.
+##'
+##' @param file filename where to save the image. When this is not
+##' specified (left NULL), the function completes without doing anything.
+##' @param fsize vector with two elements giving (width, height)
+##' of desired image
+##' 
+##' @export
 plotPSstart = function(file=NULL, fsize=c(4,4), ...) {
   if (!is.null(file)) {
     postscript(file=file, paper="special", width=fsize[1], height=fsize[2],
@@ -16,19 +23,35 @@ plotPSstart = function(file=NULL, fsize=c(4,4), ...) {
 }
 
 
-## use this to start writing into a PDF file
-## (analogous to plotPSstart)
-##
+
+##' Start plotting into a PDF device
+##'
+##' Start plotting into a PDF device.
+##'
+##' @param file filename where to save the image. When this is not
+##' specified (left NULL), the function completes withouth doing anything.
+##' @param fsize vector with two elements giving (width, height)
+##' of desired image
+##' 
+##' @export
 plotPDFstart = function(file=NULL, fsize=c(4,4), useDingbats=F,  ...) {
   if (!is.null(file)) {
-    pdf(file=file, paper="special", width=fsize[1], height=fsize[2], useDingbats=useDingbats, ...);
+    pdf(file=file, paper="special", width=fsize[1], height=fsize[2],
+        useDingbats=useDingbats, ...);
   }
 }
 
 
-## use this to terminate the PS
-## (can take multiple paramters, but only uses "file")
-##
+##' Terminate writing into a PS device.
+##'
+##' Terminate writing into a PS device.
+##'
+##' @param file filename. When NULL is not specified (left NULL),
+##' the function completes without doing anything. When filename is
+##' not NULL, this function will force a call to dev.off() and complete
+##' writing to a graphics device.
+##' 
+##' @export
 plotPSend = function(file=NULL, ...) {
   if (!is.null(file)) {
     dev.off();
@@ -36,8 +59,16 @@ plotPSend = function(file=NULL, ...) {
 }
 
 
-## same as plotPSend
-##
+##' Terminate writing into a PDF device.
+##'
+##' Terminate writing into a PDF device.
+##'
+##' @param file filename. When NULL is not specified (left NULL),
+##' the function completes without doing anything. When filename is
+##' not NULL, this function will force a call to dev.off() and complete
+##' writing to a graphics device.
+##' 
+##' @export
 plotPDFend = function(file=NULL, ...) {
   if (!is.null(file)) {
     dev.off();

@@ -1,11 +1,13 @@
-##
-## checks if variables (objects) are defined (using ls())
-## 
-## need - vector of variable names that are required to be defined
-## have - put in vector output from ls(). 
-## This will collect all the variables that
-## are currently define
-##
+##' Compare vectors and report discrepancies
+##'
+##' Compare vectors and report discrepancies via stop(). This is useful
+##' at the beginning of a pipeline, where it is important to check whether
+##' critical variables/inputs have been defined. 
+##' 
+##' @param need vector of elements. Call the function specifying all
+##' the required variables here.
+##' @param have vector of elements. Call the function passing ls() here.
+##' @export
 checkVarsStop = function(have, need) {
   ## compare the need and have vectors to check what is missing
   missing = need[!(need %in% have)]

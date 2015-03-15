@@ -1,13 +1,10 @@
-## input a color,
-## output a different color lightened/darkened by some amount
-##
-## col is a color e.g. #2378aa
-## lighten is a number [0,whatever]
-##
-## function also accepts vectors of colors 
-##
-## Author: Tomasz Konopka
-##
+##' Modify a color by lightening
+##'
+##' Modify a color by lightening. Analogous to colDarken() in this package.
+##'
+##' @param col color to modify. The funciton also accepts vectors of colors.
+##' @param lighten number [0, whatever] indicating by how much to lighten.
+##' @export
 colLighten = function(col, lighten) {
 
   if (length(col)<1 | length(lighten)<1) {
@@ -27,7 +24,7 @@ colLighten = function(col, lighten) {
     
   } else {
     ## lighten is a vector...
-      ## expand col so that it fits the length of lighten
+    ## expand col so that it fits the length of lighten
     while (length(col) < length(lighten)) {
       col = c(col, col);
     }
@@ -44,12 +41,19 @@ colLighten = function(col, lighten) {
     
     return( rgb(t(temp)) );            
   }
-    
+  
 }
 
 
 
-## analog of colLighten, but this darkens the color
+
+##' Modify a color by darkening
+##'
+##' Modify a color by darkening. Analogous to colLighten() in this package.
+##'
+##' @param col color to modify. The funciton also accepts vectors of colors.
+##' @param dark number [0, whatever] indicating by how much to lighten.
+##' @export
 colDarken = function(col, darken) {
 
   if (length(col)<1 | length(darken)<1) {
@@ -89,9 +93,13 @@ colDarken = function(col, darken) {
 
 
 
-## (vectorized) function to convert a value into a transparency value
-## use only values in range [0,1]
-## 
+##' Convert a value [0,1] into a hex code
+##'
+##' Convert a value [0,1] into a hex code. Useful for obtaining a transparency
+##' code based on a floating point number.
+##'
+##' @param x a number or a vector of numbers to convert into hex.
+##' @export
 val2hex = function(x) {
   ## convert all values into hex codes
   ans = as.character(as.hexmode(round(x*255)));
@@ -106,7 +114,12 @@ val2hex = function(x) {
 
 
 
-## convert colors into "#XXXXXX" format
+##' Convert colors into hex format
+##'
+##' Convert colors into hex format, e.g. "red" into #ff0000.
+##'
+##' @param x color or vector of colors to convert
+##' @export
 col2hex = function(x) {
   ans = matrix(val2hex(col2rgb(x)/255), nrow=3);
   ans = apply(ans, 2, paste, collapse="");
@@ -118,8 +131,12 @@ col2hex = function(x) {
 
 
 
-## "average" rgb values of colors
-##
+##' Calculate an average from a vector of colors
+##'
+##' Calculate an average from a vector of colors.
+##'
+##' @param x vector of colors.
+##' @export
 avgcol= function(x) {
   ans = matrix(col2rgb(x)/255, nrow=3);
   ans = apply(ans, 1, mean);

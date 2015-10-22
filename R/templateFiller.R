@@ -53,22 +53,22 @@ read.templates = function(dirname) {
 ##' @export
 fill.templates = function(templs, templatename, keys = c(), values=c()) {
 
-  if (length(keys)<1 | length(values)<1 | length(keys)<length(values)) {
-    stop("keys and/or values are misspecified\n");
-  }
-
-  ## check that the templatename exists among the templates templs
-  if (!(templatename %in% names(templs))) {
-    stop(paste("template ",templatename," does not exist\n"));
-  }
-
-  ## replace all the keys with the corresponding values
-  ans = templs[[templatename]];
-  if (length(keys)>0) {
-      for (i in 1:length(keys)) {
-          ans = gsub(keys[i], values[i], ans);
-      }
-  }
-  
-  return (ans);
+    if (length(keys)<length(values)) {
+        stop("keys and/or values are misspecified\n");
+    }
+    
+    ## check that the templatename exists among the templates templs
+    if (!(templatename %in% names(templs))) {
+        stop(paste("template ",templatename," does not exist\n"));
+    }
+    
+    ## replace all the keys with the corresponding values
+    ans = templs[[templatename]];
+    if (length(keys)>0) {
+        for (i in 1:length(keys)) {
+            ans = gsub(keys[i], values[i], ans);
+        }
+    }
+    
+    return (ans);
 }

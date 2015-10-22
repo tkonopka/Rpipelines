@@ -64,8 +64,10 @@ fill.templates = function(templs, templatename, keys = c(), values=c()) {
 
   ## replace all the keys with the corresponding values
   ans = templs[[templatename]];
-  for (i in 1:length(keys)) {
-    ans = gsub(keys[i], values[i], ans);
+  if (length(keys)>0) {
+      for (i in 1:length(keys)) {
+          ans = gsub(keys[i], values[i], ans);
+      }
   }
   
   return (ans);

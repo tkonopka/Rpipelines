@@ -9,7 +9,12 @@
 
 
 
-
+##' Read template objects from files
+##'
+##' This function scans a directory for .txt files and loads each of them
+##' into a list of strings
+##' 
+##' @param dirname character string, name of directory holding templates
 ##' @export
 read.templates = function(dirname) {
 
@@ -49,7 +54,14 @@ read.templates = function(dirname) {
 
 
 
-
+##' Fill-in a template with specific key-value pairs
+##' 
+##' @param templs list of templates
+##' @param templatename character string, name of template to use
+##' @param keys vector of character strings, elements in the template to replace
+##' @param values vector of character strings, matched with keys, these values
+##'  will be used to replace generic keys within the template
+##' 
 ##' @export
 fill.templates = function(templs, templatename, keys = c(), values=c()) {
 

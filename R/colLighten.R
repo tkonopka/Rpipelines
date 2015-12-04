@@ -4,6 +4,7 @@
 ##'
 ##' @param col color to modify. The funciton also accepts vectors of colors.
 ##' @param lighten number [0, whatever] indicating by how much to lighten.
+##' 
 ##' @export
 colLighten = function(col, lighten) {
 
@@ -52,7 +53,8 @@ colLighten = function(col, lighten) {
 ##' Modify a color by darkening. Analogous to colLighten() in this package.
 ##'
 ##' @param col color to modify. The funciton also accepts vectors of colors.
-##' @param dark number [0, whatever] indicating by how much to lighten.
+##' @param darken number [0, whatever] indicating by how much to lighten.
+##' 
 ##' @export
 colDarken = function(col, darken) {
 
@@ -99,6 +101,7 @@ colDarken = function(col, darken) {
 ##' code based on a floating point number.
 ##'
 ##' @param x a number or a vector of numbers to convert into hex.
+##' 
 ##' @export
 val2hex = function(x) {
   ## convert all values into hex codes
@@ -119,6 +122,7 @@ val2hex = function(x) {
 ##' Convert colors into hex format, e.g. "red" into #ff0000.
 ##'
 ##' @param x color or vector of colors to convert
+##' 
 ##' @export
 col2hex = function(x) {
   ans = matrix(val2hex(col2rgb(x)/255), nrow=3);
@@ -136,6 +140,7 @@ col2hex = function(x) {
 ##' Calculate an average from a vector of colors.
 ##'
 ##' @param x vector of colors.
+##' 
 ##' @export
 avgcol= function(x) {
   ans = matrix(col2rgb(x)/255, nrow=3);

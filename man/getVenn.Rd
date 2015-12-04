@@ -7,13 +7,15 @@
 getVenn(sizeA, sizeB, sizeAB, theta = 0, ...)
 }
 \arguments{
-\item{sizeA}{- numeric. Area of circle A}
+\item{sizeA}{numeric. Area of circle A}
 
-\item{sizeB}{- numeric. Area of circle B}
+\item{sizeB}{numeric. Area of circle B}
 
-\item{sizeAB}{- numeric. Area of intersection}
+\item{sizeAB}{numeric. Area of intersection}
 
-\item{theta}{- numeric. Angle in radians}
+\item{theta}{numeric. Angle in radians}
+
+\item{...}{additional arguments passed on to findCircleDistance}
 }
 \description{
 Convert areas into coordinates of circle centers

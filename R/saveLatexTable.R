@@ -4,9 +4,21 @@
 ##' and write it into two files. One has suffix "header.txt" and contains
 ##' the column names. The second has suffix "body.txt" and contains the 
 ##' contents of the table.
+##'
+##' @param Data data frame
+##' @param file character string, destination file name
+##' @param hlineevery integer, number of lines between hline elements
+##' @param checkSpecialChars logical, determine if special characters should be escaped
+##' @param eol character string, text for end of line
+##' @param quote logical, 
+##' @param sep character string, separator between columns
+##' @param col.names logical, 
+##' @param row.names logical,
+##' @param ... additional arguments are ignored
+##' 
 ##' @export
 saveLatexTable = function(Data, file=NULL, hlineevery=5, checkSpecialChars=F,
-  eol=" \\\\\n", quote=F, sep=" & ", col.names=F, row.names=F, ...) {
+  eol=" \\\\\n", quote=FALSE, sep=" & ", col.names=F, row.names=F, ...) {
 
   if (is.null(file)) {
     stop("saveLatexTable: must specify file path");
@@ -63,8 +75,10 @@ saveLatexTable = function(Data, file=NULL, hlineevery=5, checkSpecialChars=F,
 
 
 
-## takes an object, vector, or matrix as input
-## if the object is made up characters, latex special characters are edited
+##' takes an object, vector, or matrix as input
+##' if the object is made up characters, latex special characters are edited
+##' @param Data data frame
+##' 
 avoidLatexSpecialChar = function(Data) {
 
    badchars = c("_","%","&","#");

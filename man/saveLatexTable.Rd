@@ -5,8 +5,29 @@
 \title{Save a matrix as latex table}
 \usage{
 saveLatexTable(Data, file = NULL, hlineevery = 5, checkSpecialChars = F,
-  eol = " \\\\\\\\\\n", quote = F, sep = " & ", col.names = F,
+  eol = " \\\\\\\\\\n", quote = FALSE, sep = " & ", col.names = F,
   row.names = F, ...)
+}
+\arguments{
+\item{Data}{data frame}
+
+\item{file}{character string, destination file name}
+
+\item{hlineevery}{integer, number of lines between hline elements}
+
+\item{checkSpecialChars}{logical, determine if special characters should be escaped}
+
+\item{eol}{character string, text for end of line}
+
+\item{quote}{logical,}
+
+\item{sep}{character string, separator between columns}
+
+\item{col.names}{logical,}
+
+\item{row.names}{logical,}
+
+\item{...}{additional arguments are ignored}
 }
 \description{
 Save a data frame as a latex table. Convert object into a matrix

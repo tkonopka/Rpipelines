@@ -1,14 +1,13 @@
-##
-## a function that will compile a latex document and 
-##
-## filename should be the name of the latex document
-## latexmode should be either "latex" or "pdflatex"
-##    Both modes will give  a pdf document at the end,
-##    but use "latex" if document has eps figures (tex -> dvi -> pdf)
-##    and use "pdflatex" if document has pdf figures (tex -> pdf)
-##
-## Author: Tomasz Konopka (CeMM)
-##
+
+##' Compile a latex document and 
+##'
+##' @param filename character string, name of latex document
+##' @param latexmode character string,  should be either "latex" or "pdflatex"
+##'    Both modes will give  a pdf document at the end,
+##'    but use "latex" if document has eps figures (tex -> dvi -> pdf)
+##'    and use "pdflatex" if document has pdf figures (tex -> pdf)
+##' @param intern logical, passed to a system() command
+##'
 ##' @export
 compileLatexDoc = function(filename, latexmode="latex", intern=TRUE) {
 

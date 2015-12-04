@@ -11,6 +11,8 @@ plotPSend(file = NULL, ...)
 the function completes without doing anything. When filename is
 not NULL, this function will force a call to dev.off() and complete
 writing to a graphics device.}
+
+\item{...}{additional arguments are ignored}
 }
 \description{
 Terminate writing into a PS device.

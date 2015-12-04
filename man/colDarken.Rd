@@ -9,7 +9,7 @@ colDarken(col, darken)
 \arguments{
 \item{col}{color to modify. The funciton also accepts vectors of colors.}
 
-\item{dark}{number [0, whatever] indicating by how much to lighten.}
+\item{darken}{number [0, whatever] indicating by how much to lighten.}
 }
 \description{
 Modify a color by darkening. Analogous to colLighten() in this package.

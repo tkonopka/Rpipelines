@@ -12,6 +12,8 @@ specified (left NULL), the function completes without doing anything.}
 
 \item{fsize}{vector with two elements giving (width, height)
 of desired image}
+
+\item{...}{additional arguments are ignored}
 }
 \description{
 Start plotting into a PS device.

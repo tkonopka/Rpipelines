@@ -4,7 +4,7 @@
 \alias{plotPDFstart}
 \title{Start plotting into a PDF device}
 \usage{
-plotPDFstart(file = NULL, fsize = c(4, 4), useDingbats = F, ...)
+plotPDFstart(file = NULL, fsize = c(4, 4), useDingbats = FALSE, ...)
 }
 \arguments{
 \item{file}{filename where to save the image. When this is not
@@ -12,6 +12,10 @@ specified (left NULL), the function completes withouth doing anything.}
 
 \item{fsize}{vector with two elements giving (width, height)
 of desired image}
+
+\item{useDingbats}{logical, determines whether to use dingbats font}
+
+\item{...}{additional arguments passed to pdf()}
 }
 \description{
 Start plotting into a PDF device.

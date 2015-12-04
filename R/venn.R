@@ -9,10 +9,11 @@
 ##'
 ##' Convert areas into coordinates of circle centers
 ##' 
-##' @param sizeA - numeric. Area of circle A
-##' @param sizeB - numeric. Area of circle B
-##' @param sizeAB - numeric. Area of intersection
-##' @param theta - numeric. Angle in radians
+##' @param sizeA numeric. Area of circle A
+##' @param sizeB numeric. Area of circle B
+##' @param sizeAB numeric. Area of intersection
+##' @param theta numeric. Angle in radians
+##' @param ... additional arguments passed on to findCircleDistance
 ##' 
 ##' @export
 getVenn = function(sizeA, sizeB, sizeAB, theta=0, ...) {

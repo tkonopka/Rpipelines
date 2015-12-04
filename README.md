@@ -1,6 +1,6 @@
 # Rpipelines
 
-![Status](https://travis-ci.org/tkonopka/RGeneticThesaurus.svg?branch=master)
+![Status](https://travis-ci.org/tkonopka/Rpipelines.svg?branch=master)
 
 &nbsp;
 
